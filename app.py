@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from pymongo import MongoClient
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -65,4 +66,5 @@ def inbox():
     return jsonify(result)
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
     app.run(debug=True)
