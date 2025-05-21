@@ -628,7 +628,7 @@
 
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
-        const backendUrl = "https://phantomconnect.onrender.com/"; // change if deployed
+        const backendUrl = `${window.location.origin}`;
         let currentUser = null;
         let currentReceiver = null;
 
